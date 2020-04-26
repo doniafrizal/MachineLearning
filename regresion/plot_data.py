@@ -115,16 +115,4 @@ def plot_cost(feature, label, theta):
 
     # rotate for better angle
     ax.view_init(30, 120)
-
-    # contour plot
-    # Plot cost_vals as 15 contours spaced logarithmically between 0.01 and 100
-    cost_vals = cost_vals.T
-
-    ax = pyplot.subplot(122)
-    pyplot.contour(theta0_vals, theta1_vals, cost_vals, linewidths=2, cmap='viridis', levels=np.logspace(-2, 3, 20))
-    pyplot.xlabel('theta0')
-    pyplot.ylabel('theta1')
-    pyplot.plot(theta[0], theta[1], 'ro', ms=10, lw=2)
-    pyplot.title('Contour, showing minimum')
-
     pass
