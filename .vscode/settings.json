@@ -1,0 +1,18 @@
+{
+    "python.pythonPath": "/home/doniafrizal/anaconda3/envs/D_programmer-200430-DA/bin/python",
+    "python.linting.flake8Enabled": false,
+    "python.linting.banditEnabled": false,
+    "python.linting.pylintEnabled": true,
+    "python.linting.enabled": true,
+    "python.testing.pytestArgs": [
+        "regresion"
+    ],
+    "python.testing.unittestEnabled": false,
+    "python.testing.nosetestsEnabled": false,
+    "python.testing.pytestEnabled": false,
+    "files.autoSave": "onFocusChange",
+    "python.autoComplete.addBrackets": true,
+    "python.linting.pylintUseMinimalCheckers": false,
+    "python.linting.pycodestyleEnabled": false,
+    "python.testing.promptToConfigure": false
+}

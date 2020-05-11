@@ -1,5 +1,7 @@
-# used for manipulating directory paths
-import os
+"""
+Linear regression module
+
+"""
 
 # Scientific and vector computation for python
 import numpy as np
@@ -8,15 +10,16 @@ from numpy.linalg import inv
 
 def compute_cost(feature, label, theta):
     """
-    Compute cost for linear regression. Computes the cost of using theta as the
-    parameter for linear regression to fit the data points in feature (X) and label (y).
+    Compute cost for linear regression. Computes the cost of using theta as
+    the parameter for linear regression to fit the data points in feature
+    (X) and label (y).
 
     Parameters
     ----------
     feature : array_like
-        The input dataset of shape (m x n+1), where m is the number of examples,
-        and n is the number of features. We assume a vector of one's already
-        appended to the features so we have n+1 columns.
+        The input dataset of shape (m x n+1), where m is the number of
+        examples, and n is the number of features. We assume a vector
+        of one's already appended to the features so we have n+1 columns.
 
     label : array_like
         The values of the function at each data point. This is a vector of
@@ -35,7 +38,8 @@ def compute_cost(feature, label, theta):
     # initialize some useful values
     total_examples = len(label)  # number of training examples (m)
 
-    predictions = feature.dot(theta)  # Predictions of the hypothesis on all samples
+    # Predictions of the hypothesis on all samples
+    predictions = feature.dot(theta)
 
     sqr_errors = (predictions - label) ** 2
 
@@ -46,8 +50,8 @@ def compute_cost(feature, label, theta):
 
 def gradient_descent(feature, label, theta, alpha, num_iters):
     """
-    Performs gradient descent to learn `theta`. Updates theta by taking `num_iters`
-    gradient steps with learning rate `alpha`.
+    Performs gradient descent to learn `theta`. Updates theta by taking
+    `num_iters` gradient steps with learning rate `alpha`.
 
     Parameters
     ----------
@@ -98,10 +102,10 @@ def gradient_descent(feature, label, theta, alpha, num_iters):
 
 def feature_normalize(feature):
     """
-    Normalizes the features in feature. returns a normalized version of feature where
-    the mean value of each feature is 0 and the standard deviation
-    is 1. This is often a good preprocessing step to do when working with
-    learning algorithms.
+    Normalizes the features in feature. returns a normalized version of
+    feature where the mean value of each feature is 0 and the standard
+    deviation is 1. This is often a good preprocessing step to do when
+    working with learning algorithms.
 
     Parameters
     ----------
@@ -126,7 +130,8 @@ def feature_normalize(feature):
 
 def normal_eqn(feature, label):
     """
-    Computes the closed-form solution to linear regression using the normal equations.
+    Computes the closed-form solution to linear regression using the normal
+    equations.
 
     Parameters
     ----------
@@ -146,14 +151,16 @@ def normal_eqn(feature, label):
 
     feature_transpose = feature.transpose()  # transpose feature array
 
-    theta = inv(feature_transpose.dot(feature)).dot(feature_transpose).dot(label)
+    theta = inv(feature_transpose.dot(feature)). \
+                dot(feature_transpose).dot(label)
 
     return theta
 
 
 def predict(to_predict, theta):
     """
-    Takes in numpy array of to_predict and theta and return the predicted value of y based on theta
+    Takes in numpy array of to_predict and theta and return the predicted
+    value of y based on theta
     """
 
     predictions = np.dot(theta.transpose(), to_predict)

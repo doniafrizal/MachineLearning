@@ -5,7 +5,7 @@ from mpl_toolkits.mplot3d import Axes3D  # needed to plot 3-D surfaces
 # Scientific and vector computation for python
 import numpy as np
 
-import regresion as lr
+import regression as lr
 
 
 def plot_data(feature, label, xmin, xmax, ymin, ymax, xlabel, ylabel):
@@ -102,7 +102,6 @@ def plot_cost(feature, label, theta):
 
     # Because of the way meshgrids work in the surf command, we need to
     # transpose J_vals before calling surf, or else the axes will be flipped
-
 
     # surface plot
     fig = pyplot.figure(figsize=(12, 5))
